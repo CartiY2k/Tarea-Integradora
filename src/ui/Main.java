@@ -3,7 +3,9 @@ package ui;
 import model.*;
 import java.util.Scanner;
 
-
+/**
+ * @author Juan David Patiño
+ */
 
 public class Main {
     public static  Scanner lc = new Scanner(System.in);
@@ -50,6 +52,11 @@ public class Main {
         }
     }
     //Methods
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b>
+     * @return the option tha te user wanna do
+     */
 
     public static int menu() {
         System.out.println("///////Menu///////");
@@ -67,6 +74,11 @@ public class Main {
         return asnwer;
 
     }
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return
+     */
 
     //Option 1 
 
@@ -76,6 +88,14 @@ public class Main {
         System.out.println("Wetland's Zone [1]Urban | [2]Rural");
         int zoneType = lc.nextInt();
         lc.nextLine();
+        String whereZone = "";
+        if(zoneType == 1){
+            System.out.println("Gimme the wetland's Neighborhood");
+            whereZone= lc.nextLine();
+        }else{
+            System.out.println("Gimme the wetland's village");
+            whereZone = lc.nextLine();
+        }
         System.out.println("Wetland's privacity [1]Public | [2]Private");
         int  privacityType = lc.nextInt();
         lc.nextLine();
@@ -90,6 +110,11 @@ public class Main {
         String message = municipality.addWetland(name, zoneType, privacityType, quantityKm2, url, protectedArea, enviromentTest);
         System.out.println(message);
     }
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return
+     */
 
     //Option 2 
     public static void registerEvent(){
@@ -126,6 +151,11 @@ public class Main {
             System.out.println("The wetland "+ nameSearch+" haven't registered yet.");
         
     }
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return
+     */
 
     //Option 3
     public static void registerSpecies(){
@@ -151,6 +181,11 @@ public class Main {
             System.out.println("The wetland "+ nameSearch+" haven't registred yet.");
     }
 
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return
+     */
     //Option 4
     public static void howManyMaintenances(){
         System.out.println("////////Information///////");
@@ -168,12 +203,23 @@ public class Main {
             System.out.println("You haven't registered any wetlands yet.");
     }
 
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return
+     */
     //Option 5
     public static void fewestSpecies() {
         String message = municipality.counterSpecies();
         System.out.println("///////// The fewest /////////////");
         System.out.println(message);
     }
+
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b>
+     * @return
+     */
 
 
     //Option 6 
@@ -182,6 +228,12 @@ public class Main {
         System.out.println("///////// The highest /////////////");
         System.out.println(message);
     }
+
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return
+     */
 
     
     //Option 7
@@ -202,11 +254,14 @@ public class Main {
         if(wetlandsSpeciesNames[0]== null)
             System.out.println("Any wetland have "+ nameSpecies+" as a specie.");
 
-        
-
-        
-
     }
+
+
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b>
+     * @return
+     */
 
     //Option 8
     public static void wetlandsAndSpecies(){

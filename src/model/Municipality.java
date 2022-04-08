@@ -14,9 +14,10 @@ public class Municipality {
     }
 
     /**
-     * 
-     * @param nameSpecie
-     * @return
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @param nameSpecie String:the variable need to be != null
+     * @return wetlandsSpeciesNames[]
      */
     public String[] serchSpecies(String nameSpecie){
         boolean exitOrNo = false;
@@ -38,8 +39,9 @@ public class Municipality {
    
 
     /**
-     * 
-     * @return
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return a message, the information that it return is depend on the algortim
      */
     public String counterSpecies(){
         int fewest = 1000000000;
@@ -62,8 +64,9 @@ public class Municipality {
     }
 
     /**
-     * 
-     * @return
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return a message, the information that it return is depend on the algortim
      */
 
     public String counterSpeciesHighest(){
@@ -91,16 +94,18 @@ public class Municipality {
         return message;
     }
     /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     *@param eventType int :the variable need to be != null
+     * @param directorName String:the variable need to be != null
+     * @param value double :the variable need to be != null
+     * @param description String:the variable need to be != null
+     * @param day int :the variable need to be != null
+     * @param month int :the variable need to be != null
+     * @param year int :the variable need to be != null
+     * @param positionWetland int: the variable need to be != null 
+     * @return a message, the information that it return is depend on the algorithm
      * 
-     * @param eventType
-     * @param directorName
-     * @param value
-     * @param description
-     * @param day
-     * @param month
-     * @param year
-     * @param positionWetland
-     * @return
      */
 
     public String addEvent( int eventType,String directorName,double value,String description,int day,int month, int year,int positionWetland){
@@ -108,10 +113,12 @@ public class Municipality {
         return message;
     }
     /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @param wetlandPosition int :the variable need to be != null
+     * @param yearSerch int :the variable need to be != null
+     * @return a message, the information that it return is depend on the algorithm
      * 
-     * @param wetlandPosition
-     * @param yearSerch
-     * @return
      */
 
     public String countMaintenance(int wetlandPosition,int yearSerch){
@@ -120,15 +127,16 @@ public class Municipality {
     }
 
     /**
-     * 
-     * @param name
-     * @param zone
-     * @param type
-     * @param quantityKm2
-     * @param url
-     * @param proctedArea
-     * @param enviromentTest
-     * @return
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @param name String:the variable need to be != null
+     * @param zone int :the variable need to be != null
+     * @param type int :the variable need to be != null
+     * @param quantityKm2  String:the variable need to be != null
+     * @param url String:the variable need to be != null
+     * @param proctedArea String:the variable need to be != null
+     * @param enviromentTest String:the variable need to be != null
+     * @return a message, the information that it return is depend on the algorithm
      */
 
     public String addWetland(String name, int zoneType, int privacityType, String quantityKm2, String url, String proctedArea,String enviromentTest){
@@ -151,9 +159,10 @@ public class Municipality {
         return message;
     }
     /**
-     * 
-     * @param name
-     * @return
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @param name String:the variable need to be != null
+     * @return haveTheSameName int:the variable need to be != null
      */
 
     public int diferentName(String name){
@@ -168,13 +177,14 @@ public class Municipality {
         return haveTheSameName;
     }
     /**
-     * 
-     * @param name
-     * @param scientificName
-     * @param migratorySpecie
-     * @param speciType
-     * @param positionWetland
-     * @return
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @param name String:the variable need to be != null
+     * @param scientificName String:the variable need to be != null
+     * @param migratorySpecie String:the variable need to be != null
+     * @param speciType int :the variable need to be != null
+     * @param positionWetland int : the variable need to be != null
+     * @return  a message, the information that it return is depend on the algorithm
      */
 
     public String addSpecies(String name, String scientificName,String migratorySpecie ,int speciType,int positionWetland){
@@ -183,6 +193,12 @@ public class Municipality {
 
     }
 
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return counter int : the variable need to be != null
+     */
+
     public int howManyWetlands(){
         int counter=0;
         for(int i = 0;wetlands[i]!= null;i++)
@@ -190,13 +206,22 @@ public class Municipality {
         
         return counter;
     }
-
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @param positionWetland int:the variable need to be != null
+     * @return  a message, the information that it return is depend on the algorithm
+     */
 
     public String showWetlands(int positionWetland){
         String message = wetlands[positionWetland].getName()+" have "+(wetlands[positionWetland].counterFauna()+wetlands[positionWetland].counterFlora())+" Species.";
         return  message;
     }
-
+    /**
+     * <b> pre:<b>
+     * <b> pos:<b>
+     * @return counterWetland int:the variable need to be != null
+     */
 
     public int counterExistWetland(){
         int counterWetland = 0;
@@ -207,9 +232,10 @@ public class Municipality {
     }
 
     /**
-     * 
-     * @param wetlandSearch
-     * @return
+     * <b> pre:<b>
+     * <b> pos:<b>
+     * @param wetlandSearch String:the variable need to be != null
+     * @return position int:the variable need to be != null
      */
 
     public int searchWetland(String wetlandSearch){

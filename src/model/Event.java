@@ -12,16 +12,7 @@ public class Event {
     //Relacion
 
     //Constructor
-    /**
-     * 
-     * @param eventType1
-     * @param autorName
-     * @param description
-     * @param value
-     * @param day
-     * @param month
-     * @param year
-     */
+    
     public Event(int eventType1, String autorName, String description, double value,int day ,int month ,int year){
         switch(eventType1){
             case 1:

@@ -56,10 +56,14 @@ public class Wetland {
         
     }
     //Methods
+
     /**
-     * 
-     * @param yearSerch
-     * @return
+     * So, this method make counter of the maintenances and a year that the user input.
+     * <b> pre:</b> The user don't know how many Maintenances have in a year
+     * <b> pos:</b> The user know how many Maintenances have in a year, because you need to return a String than it will be print in the Main
+     * @param wetlandPosition it's the position of the wetland that you will return
+     * @param yearSerch it's the year That the user wanna  know
+     * @return  a message, it's said that how many maintenances have each wetland in the year that the user input.
      */
 
     public String gimmeTheInformatiton(int wetlandPosition,int yearSerch){
@@ -73,12 +77,14 @@ public class Wetland {
         return message;
     }
     /**
-     * 
-     * @param name
-     * @param scientificName
-     * @param migratorySpecie
-     * @param speciType
-     * @return
+     * This method will be use when you need to register a new Specie, it can be Flora or Fauna and return and variable type String
+     * <b> pre:<b> The user wanna register a new Specie and in the main him select The option number 3.
+     * <b> pos:<b> The user registered a new Specie in a Correct Way.
+     * @param name This is the name of the specie as you can see.
+     * @param scientificName This is the scientific Name of the specie as you can see.
+     * @param migratorySpecie This said me if the species that the user registered was migratory or not.
+     * @param speciType This said me what kinda of specie is it.
+     * @return a message, the information that it return is depend on the algorithm
      */
     public String registerSpecie(String name, String scientificName,String migratorySpecie ,int speciType){
         String message = name+" registered in a correct way.";
@@ -94,15 +100,16 @@ public class Wetland {
         return message;
     }
     /**
-     * 
-     * @param eventType
-     * @param directorName
-     * @param value
-     * @param description
-     * @param day
-     * @param month
-     * @param year
-     * @return
+     * <b> pre:<b>
+     * <b> pos:<b>
+     * @param eventType int :This is  the type of the event the variable need to be != null
+     * @param directorName String:the variable need to be != null
+     * @param value double :the variable need to be != null
+     * @param description String:the variable need to be != null
+     * @param day int :the variable need to be != null
+     * @param month int :the variable need to be != null
+     * @param year int :the variable need to be != null
+     * @return a message, the information that it return is depend on the algorithm
      */
 
     public String registerdEvent(int eventType,String directorName,double value,String description,int day,int month, int year){
@@ -119,8 +126,9 @@ public class Wetland {
         return message;
     }
     /**
-     * 
-     * @return
+     * <b> pre:<b>
+     * <b> pos:<b> 
+     * @return counter
      */
 
     public int counterFlora(){
@@ -131,6 +139,10 @@ public class Wetland {
         }
         return counter;
     }
+    /**
+     * 
+     * @return counter
+     */
 
     public int counterFauna(){
         int counter =0;
