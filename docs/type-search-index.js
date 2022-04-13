@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"model","l":"Event"},{"p":"model","l":"EventType"},{"p":"model","l":"Municipality"},{"p":"model","l":"PrivacityType"},{"p":"model","l":"Species"},{"p":"model","l":"TypesSpecies"},{"p":"model","l":"Wetland"},{"p":"model","l":"ZoneType"}];updateSearchResults();

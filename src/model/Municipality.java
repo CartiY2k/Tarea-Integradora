@@ -43,7 +43,7 @@ public class Municipality {
      * <b> pos:<b> 
      * @return a message, the information that it return is depend on the algortim
      */
-    public String counterSpecies(){
+    public String counterFlora(){
         int fewest = 1000000000;
         String fewestName ="";
         boolean wetlandDontHaveName = true;
@@ -69,7 +69,7 @@ public class Municipality {
      * @return a message, the information that it return is depend on the algortim
      */
 
-    public String counterSpeciesHighest(){
+    public String counterFaunaHighest(){
         int highest = 0;
         String highestName ="";
         boolean wetlandDontHaveName = true;
@@ -139,14 +139,14 @@ public class Municipality {
      * @return a message, the information that it return is depend on the algorithm
      */
 
-    public String addWetland(String name, int zoneType, int privacityType, String quantityKm2, String url, String proctedArea,String enviromentTest){
+    public String addWetland(String name, int zoneType, int privacityType, String quantityKm2, String url, String proctedArea,String enviromentTest,String whereZone){
         int haveTheSameName = diferentName(name);
         String message = "Registred Wetland";
         if(haveTheSameName==0){
             boolean continue1 = true;
             for (int i = 0; i < wetlands.length && continue1 != false; i++){
                 if (wetlands[i] == null) {
-                    wetlands[i] = new Wetland(name, zoneType, privacityType, quantityKm2, url, proctedArea, enviromentTest);
+                    wetlands[i] = new Wetland(name, zoneType, privacityType, quantityKm2, url, proctedArea, enviromentTest,whereZone);
                     continue1 = false;
                 }
             }
@@ -159,8 +159,8 @@ public class Municipality {
         return message;
     }
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
+     * <b> pre:You wanna know the name for do something to be specific create a new wetland with a different name.<b>
+     * <b> pos:You can know if its a new original wetland's name<b> 
      * @param name String:the variable need to be != null
      * @return haveTheSameName int:the variable need to be != null
      */
@@ -177,8 +177,8 @@ public class Municipality {
         return haveTheSameName;
     }
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
+     * <b> pre:You need to add a specie for that reason I created this method<b>
+     * <b> pos:Yoyu have a new Specie in a determinate wetland<b> 
      * @param name String:the variable need to be != null
      * @param scientificName String:the variable need to be != null
      * @param migratorySpecie String:the variable need to be != null
@@ -192,10 +192,13 @@ public class Municipality {
         return message;
 
     }
+    public String allInform(int positionWetland){
+        String message = wetlands[positionWetland].toString();
+        return message;
+    }
 
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
+     * for counter How many wetland are != null
      * @return counter int : the variable need to be != null
      */
 
@@ -207,28 +210,21 @@ public class Municipality {
         return counter;
     }
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
+     * Just fot show the wetlands
      * @param positionWetland int:the variable need to be != null
      * @return  a message, the information that it return is depend on the algorithm
      */
 
     public String showWetlands(int positionWetland){
-        String message = wetlands[positionWetland].getName()+" have "+(wetlands[positionWetland].counterFauna()+wetlands[positionWetland].counterFlora())+" Species.";
+        String message = wetlands[positionWetland].getName()+" has "+(wetlands[positionWetland].counterFauna()+wetlands[positionWetland].counterFlora())+" Species.";
         return  message;
     }
-    /**
-     * <b> pre:<b>
-     * <b> pos:<b>
-     * @return counterWetland int:the variable need to be != null
-     */
 
-    public int counterExistWetland(){
-        int counterWetland = 0;
-        for (int i = 0; i < wetlands.length && wetlands[i]!= null; i++) 
-            counterWetland++;
 
-        return counterWetland;        
+
+    public String justGetTheName(int postionW){
+        String name = wetlands[postionW].justGetTheName();
+        return name;
     }
 
     /**

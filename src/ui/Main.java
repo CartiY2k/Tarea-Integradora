@@ -34,7 +34,7 @@ public class Main {
                     howManyMaintenances();
                     break;
                 case 5:
-                    fewestSpecies();
+                    fewestFlora();
                     break;
                 case 6:
                     highestSpecies();
@@ -53,8 +53,7 @@ public class Main {
     }
     //Methods
     /**
-     * <b> pre:<b>
-     * <b> pos:<b>
+     * <This is the menu
      * @return the option tha te user wanna do
      */
 
@@ -75,8 +74,7 @@ public class Main {
 
     }
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
+     * for register a new Wetland
      * @return
      */
 
@@ -107,12 +105,11 @@ public class Main {
         String protectedArea = lc.nextLine();
         System.out.println("Gimme the average of the Enviroment Test");
         String enviromentTest = lc.nextLine();
-        String message = municipality.addWetland(name, zoneType, privacityType, quantityKm2, url, protectedArea, enviromentTest);
+        String message = municipality.addWetland(name, zoneType, privacityType, quantityKm2, url, protectedArea, enviromentTest,whereZone);
         System.out.println(message);
     }
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
+     * For register a Event
      * @return
      */
 
@@ -152,8 +149,7 @@ public class Main {
         
     }
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
+     * For register a new Species
      * @return
      */
 
@@ -189,7 +185,7 @@ public class Main {
     //Option 4
     public static void howManyMaintenances(){
         System.out.println("////////Information///////");
-        int counterHowMany = municipality.counterExistWetland();
+        int counterHowMany = municipality.howManyWetlands();
         if(counterHowMany > 0){
             System.out.print("What's the year that you wanna know?");
             int yearSerch = lc.nextInt();
@@ -204,34 +200,32 @@ public class Main {
     }
 
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
+     * This make you know the wetlandw with less number of species  
      * @return
      */
     //Option 5
-    public static void fewestSpecies() {
-        String message = municipality.counterSpecies();
+    public static void fewestFlora() {
+        String message = municipality.counterFlora();
         System.out.println("///////// The fewest /////////////");
         System.out.println(message);
     }
 
     /**
-     * <b> pre:<b>
-     * <b> pos:<b>
+     * This make you know the wetland with high  number of species  
      * @return
      */
 
 
     //Option 6 
     public static void highestSpecies() {
-        String message = municipality.counterSpeciesHighest();
+        String message = municipality.counterFaunaHighest();
         System.out.println("///////// The highest /////////////");
         System.out.println(message);
     }
 
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
+     * <b> pre:Here do you wannaa know the specie, for that reason you take this method<b>
+     * <b> pos:You know in what wetland is the species that the user input.<b> 
      * @return
      */
 
@@ -255,11 +249,11 @@ public class Main {
             System.out.println("Any wetland have "+ nameSpecies+" as a specie.");
 
     }
+    
 
 
     /**
-     * <b> pre:<b>
-     * <b> pos:<b>
+     * <b> pre:The user wanna know all the information <b>
      * @return
      */
 
@@ -267,14 +261,20 @@ public class Main {
     public static void wetlandsAndSpecies(){
         System.out.println("//////Species in the Wetlands/////");
         int howmany = municipality.howManyWetlands();
-        for(int i = 0; i<howmany&& howmany != 0;i++)
-            System.out.println("["+(i+1)+"] "+municipality.showWetlands(i));
+        for(int i = 0; i<howmany&& howmany != 0;i++){
+            System.out.println("["+(i+1)+"] "+municipality.justGetTheName(i));
+            System.out.println(municipality.showWetlands(i));
+            System.out.print(municipality.allInform(i));
+        }
+            
         if(howmany == 0)
             System.out.println("You haven't registered any wetlands yet.");
 
         
 
     }
+
+    
 
 
 

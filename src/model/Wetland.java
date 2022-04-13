@@ -13,9 +13,12 @@ public class Wetland {
     private String url;
     private String protectedArea;
     private String enviromentTests;
+    private String whereWetland;
     // Relaciones
     private Event []events;
     private Species [] animalsAndFloura;
+
+   
     // Constructor
     /**
      * 
@@ -26,14 +29,16 @@ public class Wetland {
      * @param url
      * @param protectedArea
      * @param enviromentTests
+     * @param whereZone
      */
 
-    public Wetland(String name, int zoneType, int privacityType, String quantityKm2, String url, String protectedArea,String enviromentTests) {
+    public Wetland(String name, int zoneType, int privacityType, String quantityKm2, String url, String protectedArea,String enviromentTests,String whereWetland) {
         this.name = name;
         this.quantityKm2 = quantityKm2;
         this.url = url;
         this.protectedArea = protectedArea;
         this.enviromentTests = enviromentTests;
+        this.whereWetland = whereWetland;
         events = new Event[NUMBEREVENTS];
         animalsAndFloura = new Species[NUMBERSPECIE];
         switch(zoneType){
@@ -100,8 +105,7 @@ public class Wetland {
         return message;
     }
     /**
-     * <b> pre:<b>
-     * <b> pos:<b>
+     * This method create a new Event and put a position in the array of the Events
      * @param eventType int :This is  the type of the event the variable need to be != null
      * @param directorName String:the variable need to be != null
      * @param value double :the variable need to be != null
@@ -126,9 +130,9 @@ public class Wetland {
         return message;
     }
     /**
-     * <b> pre:<b>
-     * <b> pos:<b> 
-     * @return counter
+     * 
+     * for counter the flora
+     * @return counter how many flora has a specific WETLAND
      */
 
     public int counterFlora(){
@@ -140,8 +144,8 @@ public class Wetland {
         return counter;
     }
     /**
-     * 
-     * @return counter
+     * for counter the fauna
+     * @return counter how many fauna has a specific WETLAND
      */
 
     public int counterFauna(){
@@ -155,7 +159,7 @@ public class Wetland {
 
     /**
      * 
-     * @param nameSpecie
+     * @param nameSpecie this is the name of the species that the user wanna know
      * @return
      */
 
@@ -244,6 +248,15 @@ public class Wetland {
 
     public void setAnimalsAndFloura(Species[] animalsAndFloura) {
         this.animalsAndFloura = animalsAndFloura;
+    }
+
+    public String justGetTheName(){
+        return name;
+    }
+    
+    public String toString(){
+        String message = "zone:"+zone +"\ntype:"+type+"\nKm2"+quantityKm2+"\nURL:"+ url+"\nIt's a protected Area:"+ protectedArea+"\nAverage Enviroment test:"+enviromentTests+"\nThe Wetland is in:"+ whereWetland+" location\n";
+        return message;
     }
     
 
